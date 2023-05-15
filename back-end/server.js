@@ -3,6 +3,15 @@ const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+
+const app = express();
+const port = 3000;
+const secretKey = 'your_secret_key';
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -19,98 +28,86 @@ connection.connect((err) => {
     }
 });
 
-const app = express();
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.post('/register', (req, res) => {
+    const { username, password } = req.body;
 
-// GET all itemsww
-app.get('/users', (req, res) => {
-    connection.query('SELECT * FROM users', (error, results) => {
-        if (error) {
-            console.error('Error fetching users:', error);
-            res.status(500).json({ error: 'Error fetching users' });
+    // Check if username exists
+    const query = 'SELECT * FROM users WHERE username = ?';
+    connection.query(query, [username], (err, results) => {
+        if (err) throw err;
+
+        if (results.length > 0) {
+            res.json({ success: false, message: 'username already exists' });
         } else {
-            res.status(200).json(results);
+            // Hash the password
+            bcrypt.hash(password, 10, (err, hash) => {
+                if (err) throw err;
+
+                // Insert user into the database
+                const insertQuery = 'INSERT INTO users (username, password) VALUES (?, ?)';
+                connection.query(insertQuery, [username, hash], (err) => {
+                    if (err) throw err;
+                    res.json({ success: true, message: 'Registration successful' });
+                });
+            });
         }
     });
 });
-// POST a new item
-app.post('/users', (req, res) => {
-    console.log('====req', req.body)
-    const { username, password, role } = req.body;
-    connection.query(
-        'INSERT INTO users (username, password, role) VALUES (?, ?, ?)',
-        [username, password, role],
-        (error, results) => {
-            if (error) {
-                console.error('Error creating user:', error);
-                res.status(500).json({ error: 'Error creating item' });
-            } else {
-                res.status(201).json({ message: 'user created successfully' });
-            }
+
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+
+    // Check username in the database
+    const query = 'SELECT * FROM users WHERE username = ?';
+    connection.query(query, [username], (err, results) => {
+        if (err) throw err;
+
+        if (results.length === 0) {
+            res.json({ success: false, message: 'Invalid username or password' });
+        } else {
+            // Compare password hashes
+            const user = results[0];
+            bcrypt.compare(password, user.password, (err, isMatch) => {
+                if (err) throw err;
+
+                if (isMatch) {
+                    // Generate a JWT token
+                    const token = jwt.sign({ username: user.username }, secretKey, { expiresIn: '1h' });
+                    res.json({ success: true, message: 'Login successful', token });
+                } else {
+                    res.json({ success: false, message: 'Invalid username or password' });
+                }
+            });
         }
-    );
+    });
 });
 
-// GET a specific item
-app.get('/items/:id', (req, res) => {
-    const itemId = req.params.id;
-    connection.query(
-        'SELECT * FROM items WHERE id = ?',
-        [itemId],
-        (error, results) => {
-            if (error) {
-                console.error('Error fetching item:', error);
-                res.status(500).json({ error: 'Error fetching item' });
-            } else if (results.length === 0) {
-                res.status(404).json({ message: 'Item not found' });
-            } else {
-                res.status(200).json(results[0]);
-            }
-        }
-    );
+// Protected route
+app.get('/dashboard', verifyToken, (req, res) => {
+    res.json({ success: true, message: 'Access granted to protected route' });
 });
 
-app.delete('/users/:id', (req, res) => {
-    const itemId = req.params.id;
-    console.log("==== id user", req.params.id)
-    connection.query(
-        'DELETE FROM users WHERE id = ?',
-        [itemId],
-        (error, results) => {
-            if (error) {
-                console.error('Error deleting user:', error);
-                res.status(500).json({ error: 'Error deleting user' });
-            } else if (results.affectedRows === 0) {
-                res.status(404).json({ message: 'user not found' });
-            } else {
-                res.status(200).json({ message: 'user deleted successfully' });
-            }
-        }
-    );
-});
+// Token verification middleware
+function verifyToken(req, res, next) {
+    const token = req.headers['authorization'];
 
-// PUT (update) an existing item
-app.put('/users/:id', (req, res) => {
-    const id = req.params.id;
-    const { username, password, role } = req.body;
-    connection.query(
-        'UPDATE users SET username = ?, password = ?, role = ? WHERE id = ?',
-        [username, password, role, id],
-        (error, results) => {
-            if (error) {
-                console.error('Error updating item:', error);
-                res.status(500).json({ error: 'Error updating item' });
-            } else if (results.affectedRows === 0) {
-                res.status(404).json({ message: 'Item not found' });
-            } else {
-                res.status(200).json({ message: 'Item updated successfully' });
-            }
-        }
-    );
-});
+    if (!token) {
+        return res.json({ success: false, message: 'No token provided' });
+    }
 
-app.listen(3000, () => {
-    console.log('Server HungDaiHiep started on port 3000');
+    jwt.verify(token, secretKey, (err, decoded) => {
+        if (err) {
+            return res.json({ success: false, message: 'Invalid token' });
+        }
+
+        // Attach the decoded payload to the request object
+        req.decoded = decoded;
+        next();
+    });
+}
+
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
