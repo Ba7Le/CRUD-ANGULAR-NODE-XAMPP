@@ -24,7 +24,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// GET all items
+// GET all itemsww
 app.get('/users', (req, res) => {
     connection.query('SELECT * FROM users', (error, results) => {
         if (error) {
