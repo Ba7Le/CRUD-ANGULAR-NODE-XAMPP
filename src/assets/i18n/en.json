@@ -3,7 +3,10 @@
         "label": {
             "cat-management-system": "Cat Management System",
             "home": "Home",
-            "dashboard": "Dashboard"
+            "dashboard": "Dashboard",
+            "login": "Login",
+            "signup": "Sign Up",
+            "forgot-password": "Forgot password"
         }
     }
 }

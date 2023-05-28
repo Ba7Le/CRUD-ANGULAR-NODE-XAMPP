@@ -3,7 +3,10 @@
         "label": {
             "cat-management-system": "猫管理システム",
             "home": "家",
-            "dashboard": "ダッシュボード"
+            "dashboard": "ダッシュボード",
+            "login": "ログイン",
+            "signup": "サインアップ",
+            "forgot-password": "パスワードをお忘れですか"
         }
     }
 }

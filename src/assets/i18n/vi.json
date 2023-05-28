@@ -3,7 +3,10 @@
         "label": {
             "cat-management-system": "Hệ thống quản lý mèo",
             "home": "Trang chủ",
-            "dashboard": "Bảng thống kê"
+            "dashboard": "Bảng thống kê",
+            "login": "Đăng nhập",
+            "signup": "Đăng ký",
+            "forgot-password": "Quên mật khẩu"
         }
     }
 }

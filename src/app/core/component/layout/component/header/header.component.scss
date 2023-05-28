@@ -6,3 +6,24 @@
     background-color: black;
     color: #fff;
 }
+
+.mat-toolbar-row .span-right {
+    font-size: 15px;
+    margin-right: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mat-toolbar-row span:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+
+    .mat-toolbar-row {
+        height: 35vh;
+        display: flex;
+        flex-direction: column;
+        padding: 2vh 0;
+    }
+}
