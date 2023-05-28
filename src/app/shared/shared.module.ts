@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -17,7 +18,8 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   exports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { MatListModule } from '@angular/material/list';
     TranslateModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }
