@@ -8,5 +8,20 @@
             "signup": "サインアップ",
             "forgot-password": "パスワードをお忘れですか"
         }
+    },
+    "signup-page": {
+        "signup": "サインアップ",
+        "name": "名前",
+        "password": "パスワード",
+        "email": "Email",
+        "contact-number": "連絡先番号"
+    },
+    "required-or-invalid-field": {
+        "mandatory": "このフィールドは必須です。",
+        "invalid": "このフィールドは無効です。"
+    },
+    "button": {
+        "cancel": "キャンセル",
+        "signup": "サインアップ"
     }
 }

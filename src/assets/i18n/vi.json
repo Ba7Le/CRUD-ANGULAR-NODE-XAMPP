@@ -8,5 +8,20 @@
             "signup": "Đăng ký",
             "forgot-password": "Quên mật khẩu"
         }
+    },
+    "signup-page": {
+        "signup": "Đăng ký",
+        "name": "Tên",
+        "password": "Mật khẩu",
+        "email": "Email",
+        "contact-number": "Số liên lạc"
+    },
+    "required-or-invalid-field": {
+        "mandatory": "Trường này là bắt buộc phải điền",
+        "invalid": "Kiểu dữ liệu không hợp lệ"
+    },
+    "button": {
+        "cancel": "Hủy",
+        "signup": "Đăng ký"
     }
 }

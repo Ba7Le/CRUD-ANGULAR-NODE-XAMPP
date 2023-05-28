@@ -8,5 +8,20 @@
             "signup": "Sign Up",
             "forgot-password": "Forgot password"
         }
+    },
+    "signup-page": {
+        "signup": "Sign Up",
+        "name": "Name",
+        "password": "Password",
+        "email": "Email",
+        "contact-number": "Contact Number"
+    },
+    "required-or-invalid-field": {
+        "mandatory": "This field is mandatory",
+        "invalid": "This field is invalid"
+    },
+    "button": {
+        "cancel": "Cancel",
+        "signup": "Sign Up"
     }
 }
