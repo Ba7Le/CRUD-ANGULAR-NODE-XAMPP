@@ -11,14 +11,14 @@ export class SnackbarService {
   openSnackBar(message: string, action: string) {
     if (action === 'error') {
       this.snackbar.open(message, '', {
-        horizontalPosition: 'right',
+        horizontalPosition: 'center',
         verticalPosition: 'top',
         duration: 5000,
-        panelClass: ['black-snackbar']
+        panelClass: ['red-snackbar']
       });
     } else {
       this.snackbar.open(message, '', {
-        horizontalPosition: 'right',
+        horizontalPosition: 'center',
         verticalPosition: 'top',
         duration: 5000,
         panelClass: ['green-snackbar']

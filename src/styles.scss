@@ -13,14 +13,14 @@ body {
 }
 
 
-.black-snackbar {
-  background: black !important;
+.red-snackbar {
+  background: red !important;
   border-radius: 99px;
 }
 
 .mat-mdc-snack-bar-container {
-  &.black-snackbar {
-    --mdc-snackbar-container-color: black;
+  &.red-snackbar {
+    --mdc-snackbar-container-color: red;
     --mat-mdc-snack-bar-button-color: #fff;
     --mdc-snackbar-supporting-text-color: #fff;
   }
