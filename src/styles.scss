@@ -1,13 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.black-snackbar {
+  background: black !important;
+  border-radius: 99px;
+}
+
+.mat-mdc-snack-bar-container {
+  &.black-snackbar {
+    --mdc-snackbar-container-color: black;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+}
+
+.green-snackbar {
+  background: #32CD32 !important;
+  border-radius: 99px;
+}
+
+.mat-mdc-snack-bar-container {
+  &.green-snackbar {
+    --mdc-snackbar-container-color: #32CD32;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
 }
