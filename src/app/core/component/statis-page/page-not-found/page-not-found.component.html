@@ -1,4 +1,7 @@
 <div class="page-not-found">
-    <h1>Page Not Found</h1>
-    <p>The requested page could not be found.</p>
+    <h1>{{'page-not-found.title' | translate}}</h1>
+    <p>{{'page-not-found.message' | translate}}</p>
+    <a class="mat-list-item" [routerLink]="['/home']">
+        <span class="mat-list-text">{{'page-not-found.back-home' | translate}}</span>
+    </a>
 </div>

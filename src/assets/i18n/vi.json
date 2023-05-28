@@ -23,5 +23,10 @@
     "button": {
         "cancel": "Hủy",
         "signup": "Đăng ký"
+    },
+    "page-not-found": {
+        "title": "Trang bạn yêu cầu không tồn tại",
+        "message": "Đường dẫn đến trang bạn yêu cầu không tồn tại",
+        "back-home": "Quay lại trang chủ"
     }
 }

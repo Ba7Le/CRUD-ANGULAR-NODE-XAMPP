@@ -23,5 +23,10 @@
     "button": {
         "cancel": "キャンセル",
         "signup": "サインアップ"
+    },
+    "page-not-found": {
+        "title": "ページが見つかりません",
+        "message": "リクエストされたページは見つかりませんでした。",
+        "back-home": "家に帰る"
     }
 }

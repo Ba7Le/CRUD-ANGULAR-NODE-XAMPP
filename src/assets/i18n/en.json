@@ -23,5 +23,10 @@
     "button": {
         "cancel": "Cancel",
         "signup": "Sign Up"
+    },
+    "page-not-found": {
+        "title": "Page Not Found",
+        "message": "The requested page could not be found.",
+        "back-home": "Back to home"
     }
 }
