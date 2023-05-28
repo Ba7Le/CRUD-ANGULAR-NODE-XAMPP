@@ -1,0 +1,45 @@
+.example-container {
+    display: flex;
+    height: 100%;
+}
+
+mat-drawer-container {
+    width: 100%;
+}
+
+mat-drawer {
+    width: 200px;
+    min-width: 200px;
+}
+
+mat-drawer-content {
+    padding: 16px;
+    background-color: #303030;
+    color: #fff;
+    overflow-y: auto;
+}
+
+mat-drawer {
+    background-color: black;
+    color: #fff;
+}
+
+mat-nav-list {
+    padding-top: 16px;
+}
+
+a.mat-list-item {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+
+a.mat-list-item:hover {
+    background-color: #555;
+}
+
+mat-icon {
+    font-size: 19px;
+}

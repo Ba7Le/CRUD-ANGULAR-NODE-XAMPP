@@ -1,13 +1,13 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="dark-toolbar">
     <mat-toolbar-row>
         <span>{{'common.label.cat-management-system' | translate }}</span>
         <span class="example-spacer"></span>
-        <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button> -->
         <button mat-button [matMenuTriggerFor]="menu">{{currentLanguage}}</button>
         <mat-menu #menu="matMenu">
             <button *ngFor="let item of langArray" mat-menu-item (click)="changeLang(item)">{{item}}</button>
         </mat-menu>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>account_circle</mat-icon>
+        </button>
     </mat-toolbar-row>
 </mat-toolbar>
