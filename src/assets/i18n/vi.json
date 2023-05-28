@@ -13,7 +13,7 @@
         "signup": "Đăng ký",
         "name": "Tên",
         "password": "Mật khẩu",
-        "email": "Email",
+        "email": "E-mail",
         "contact-number": "Số liên lạc"
     },
     "required-or-invalid-field": {

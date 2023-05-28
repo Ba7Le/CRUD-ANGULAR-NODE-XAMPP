@@ -37,7 +37,7 @@
         </mat-form-field>
         <br>
         <mat-form-field appearance="outline" class="w-100 mt-3">
-            <mat-label>{{'signup-page.contact-number' | translate}}Number</mat-label>
+            <mat-label>{{'signup-page.contact-number' | translate}}</mat-label>
             <input matInput placeholder="{{'signup-page.contact-number' | translate}}" formControlName="contactNumber">
             <mat-error>
                 <span *ngIf="signupForm.controls.contactNumber.errors?.required">{{
