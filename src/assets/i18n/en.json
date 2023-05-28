@@ -1,7 +1,9 @@
 {
     "common": {
         "label": {
-            "cat-management-system": "Cat Management System"
+            "cat-management-system": "Cat Management System",
+            "home": "Home",
+            "dashboard": "Dashboard"
         }
     }
 }

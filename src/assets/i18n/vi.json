@@ -1,7 +1,9 @@
 {
     "common": {
         "label": {
-            "cat-management-system": "Hệ thống quản lý mèo"
+            "cat-management-system": "Hệ thống quản lý mèo",
+            "home": "Trang chủ",
+            "dashboard": "Bảng thống kê"
         }
     }
 }
