@@ -2,8 +2,6 @@
     "common": {
         "label": {
             "cat-management-system": "Cat Management System",
-            "home": "Home",
-            "dashboard": "Dashboard",
             "login": "Login",
             "signup": "Sign Up",
             "forgot-password": "Forgot password"
@@ -28,5 +26,9 @@
         "title": "Page Not Found",
         "message": "The requested page could not be found.",
         "back-home": "Back to home"
+    },
+    "sidenav": {
+        "home": "Home",
+        "dashboard": "Dashboard"
     }
 }

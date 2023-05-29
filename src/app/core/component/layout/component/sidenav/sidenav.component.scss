@@ -1,0 +1,22 @@
+a.mat-list-item {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+
+a.mat-list-item:hover {
+    background-color: #555;
+}
+
+mat-icon {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.mat-list-item.active {
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: bold;
+}

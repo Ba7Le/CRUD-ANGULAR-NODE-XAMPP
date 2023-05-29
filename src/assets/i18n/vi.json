@@ -2,8 +2,6 @@
     "common": {
         "label": {
             "cat-management-system": "Hệ thống quản lý mèo",
-            "home": "Trang chủ",
-            "dashboard": "Bảng thống kê",
             "login": "Đăng nhập",
             "signup": "Đăng ký",
             "forgot-password": "Quên mật khẩu"
@@ -28,5 +26,9 @@
         "title": "Trang bạn yêu cầu không tồn tại",
         "message": "Đường dẫn đến trang bạn yêu cầu không tồn tại",
         "back-home": "Quay lại trang chủ"
+    },
+    "sidenav": {
+        "home": "Trang chủ",
+        "dashboard": "Bảng thống kê"
     }
 }

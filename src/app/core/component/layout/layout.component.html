@@ -2,16 +2,7 @@
 <div class="example-container">
     <mat-drawer-container>
         <mat-drawer mode="side" opened>
-            <mat-nav-list class="p-0">
-                <a class="mat-list-item" [routerLink]="['home']" routerLinkActive="active">
-                    <mat-icon>home</mat-icon>
-                    <span class="mat-list-text">{{'common.label.home' | translate}}</span>
-                </a>
-                <a class="mat-list-item" [routerLink]="['dashboard']" routerLinkActive="active">
-                    <mat-icon>dashboard</mat-icon>
-                    <span class="mat-list-text">{{'common.label.dashboard' | translate}}</span>
-                </a>
-            </mat-nav-list>
+            <app-sidenav></app-sidenav>
         </mat-drawer>
         <mat-drawer-content>
             <router-outlet></router-outlet>

@@ -8,6 +8,7 @@ import { BreadcrumbComponent } from './component/layout/component/breadcrumb/bre
 import { SharedModule } from '../shared/shared.module';
 import { PageNotFoundComponent } from './component/statis-page/page-not-found/page-not-found.component';
 import { SignupComponent } from './component/layout/component/signup/signup.component';
+import { SidenavComponent } from './component/layout/component/sidenav/sidenav.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SignupComponent } from './component/layout/component/signup/signup.comp
     HeaderComponent,
     BreadcrumbComponent,
     PageNotFoundComponent,
-    SignupComponent
+    SignupComponent,
+    SidenavComponent
   ],
   imports: [
     CommonModule,

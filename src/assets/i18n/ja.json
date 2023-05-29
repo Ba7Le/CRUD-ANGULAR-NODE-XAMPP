@@ -2,8 +2,6 @@
     "common": {
         "label": {
             "cat-management-system": "猫管理システム",
-            "home": "家",
-            "dashboard": "ダッシュボード",
             "login": "ログイン",
             "signup": "サインアップ",
             "forgot-password": "パスワードをお忘れですか"
@@ -28,5 +26,9 @@
         "title": "ページが見つかりません",
         "message": "リクエストされたページは見つかりませんでした。",
         "back-home": "家に帰る"
+    },
+    "sidenav": {
+        "home": "家",
+        "dashboard": "ダッシュボード"
     }
 }
