@@ -1,1 +1,16 @@
-<p>breadcrumb works!</p>
+<div class="d-flex flex-row" *ngIf="currentPage && currentPage.url !== '/home'">
+    <div>
+        <a class="breadcrumb-link" [routerLink]="'/'">
+            <mat-icon>home</mat-icon>
+            <span>{{'breadcrumb.home' | translate}}</span>
+        </a>
+    </div>
+    <div>
+        <mat-icon class="chevron-right">chevron_right</mat-icon>
+    </div>
+    <div>
+        <a class="breadcrumb-link" [routerLink]="currentPage.url">
+            <span>{{currentPage.title | translate}}</span>
+        </a>
+    </div>
+</div>

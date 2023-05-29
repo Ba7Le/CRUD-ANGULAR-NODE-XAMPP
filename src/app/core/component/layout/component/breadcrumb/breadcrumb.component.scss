@@ -1,0 +1,21 @@
+.breadcrumb-link {
+    display: inline-block;
+}
+
+.breadcrumb-link :hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-link mat-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.breadcrumb-link span {
+    vertical-align: middle;
+}
+
+.chevron-right {
+    vertical-align: middle;
+    color: #0d6efd;
+}

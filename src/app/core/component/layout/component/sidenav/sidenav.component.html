@@ -1,6 +1,6 @@
 <mat-nav-list class="p-0">
     <a class="mat-list-item" [routerLink]="item.router" routerLinkActive="active" *ngFor="let item of sideMenuItems">
-        <mat-icon>item.icon</mat-icon>
+        <mat-icon>{{item.icon}}</mat-icon>
         <span class="mat-list-text">{{item.label | translate}}</span>
     </a>
 </mat-nav-list>

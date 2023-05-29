@@ -30,5 +30,9 @@
     "sidenav": {
         "home": "Trang chủ",
         "dashboard": "Bảng thống kê"
+    },
+    "breadcrumb": {
+        "home": "Trang chủ",
+        "dashboard": "Bảng thống kê"
     }
 }

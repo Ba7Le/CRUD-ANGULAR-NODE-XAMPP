@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './core/component/layout/layout.component';
 import { PageNotFoundComponent } from './core/component/statis-page/page-not-found/page-not-found.component';
+import { BREADCRUMBS } from './core/constants/breadcrumb.constant';
 
 const routes: Routes = [
   {
@@ -16,11 +17,13 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+        loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+        data: BREADCRUMBS.home
       },
       {
         path: 'dashboard',
-        loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+        data: BREADCRUMBS.dashboard
       }
     ]
   },
