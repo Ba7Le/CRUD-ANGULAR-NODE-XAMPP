@@ -11,3 +11,6 @@
         </mat-drawer-content>
     </mat-drawer-container>
 </div>
+<ng-container *ngIf="spinner$ | async">
+    <app-spinner></app-spinner>
+</ng-container>

@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PageNotFoundComponent } from './component/statis-page/page-not-found/page-not-found.component';
 import { SignupComponent } from './component/layout/component/signup/signup.component';
 import { SidenavComponent } from './component/layout/component/sidenav/sidenav.component';
+import { SpinnerComponent } from './component/layout/component/spinner/spinner.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SidenavComponent } from './component/layout/component/sidenav/sidenav.c
     BreadcrumbComponent,
     PageNotFoundComponent,
     SignupComponent,
-    SidenavComponent
+    SidenavComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
