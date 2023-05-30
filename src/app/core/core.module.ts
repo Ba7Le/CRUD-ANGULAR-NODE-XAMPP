@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './component/statis-page/page-not-found/pa
 import { SignupComponent } from './component/layout/component/signup/signup.component';
 import { SidenavComponent } from './component/layout/component/sidenav/sidenav.component';
 import { SpinnerComponent } from './component/layout/component/spinner/spinner.component';
+import { SplashScreenComponent } from './component/layout/component/splash-screen/splash-screen.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SpinnerComponent } from './component/layout/component/spinner/spinner.c
     PageNotFoundComponent,
     SignupComponent,
     SidenavComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SplashScreenComponent
   ],
   imports: [
     CommonModule,

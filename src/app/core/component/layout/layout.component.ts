@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject, map, takeUntil } from 'rxjs';
+import { Observable, Subject, delay, map, of, takeUntil } from 'rxjs';
 import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   private readonly _unsubscribe$ = new Subject();
   spinner$: Observable<boolean>
+  loadingSplashScreen = true;
 
   constructor(private _spinnerService: SpinnerService) {
 
@@ -18,6 +19,10 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getSpinner();
+    of(true).pipe(
+      takeUntil(this._unsubscribe$),
+      delay(3000)
+    ).subscribe(() => this.loadingSplashScreen = false);
   }
 
   getSpinner() {

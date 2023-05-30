@@ -1,5 +1,5 @@
-<app-header></app-header>
-<div class="example-container">
+<app-header *ngIf="!loadingSplashScreen"></app-header>
+<div class="example-container" *ngIf="!loadingSplashScreen">
     <mat-drawer-container>
         <mat-drawer mode="side" opened>
             <app-sidenav></app-sidenav>
@@ -14,3 +14,4 @@
 <ng-container *ngIf="spinner$ | async">
     <app-spinner></app-spinner>
 </ng-container>
+<app-splash-screen *ngIf="loadingSplashScreen"></app-splash-screen>
