@@ -4,6 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { SnackbarService } from 'src/app/services/snackbar.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
 import { UserService } from 'src/app/services/user.service';
 import { GlobalConstants } from 'src/app/shared/global-constants';
 
@@ -22,8 +23,8 @@ export class LoginComponent {
     private userService: UserService,
     private dialogRef: MatDialogRef<LoginComponent>,
     private ngxService: NgxUiLoaderService,
-    private snackBarService: SnackbarService
-
+    private snackBarService: SnackbarService,
+    private spinnerService: SpinnerService
   ) { }
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -33,19 +34,19 @@ export class LoginComponent {
   }
 
   handleSubmit() {
-    this.ngxService.start();
+    this.spinnerService.addLoading('login');
     var formData = this.loginForm.value;
     var data = {
       email: formData.email,
       password: formData.password
     }
     this.userService.login(data).subscribe((response: any) => {
-      this.ngxService.stop();
+      this.spinnerService.clearLoading('login');
       this.dialogRef.close();
       localStorage.setItem('token', response.token);
-      this.router.navigate(['/cafe/dashboard'])
+      this.router.navigate(['/dashboard'])
     }, (error) => {
-      this.ngxService.stop();
+      this.spinnerService.clearLoading('login');
       if (error.error?.message) {
         this.responseMessage = error.error?.message;
       } else {
