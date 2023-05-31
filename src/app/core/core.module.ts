@@ -11,6 +11,8 @@ import { SignupComponent } from './component/layout/component/signup/signup.comp
 import { SidenavComponent } from './component/layout/component/sidenav/sidenav.component';
 import { SpinnerComponent } from './component/layout/component/spinner/spinner.component';
 import { SplashScreenComponent } from './component/layout/component/splash-screen/splash-screen.component';
+import { LoginComponent } from './component/layout/component/login/login.component';
+import { ForgotPasswordComponent } from './component/layout/component/forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { SplashScreenComponent } from './component/layout/component/splash-scree
     SignupComponent,
     SidenavComponent,
     SpinnerComponent,
-    SplashScreenComponent
+    SplashScreenComponent,
+    LoginComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     CommonModule,
