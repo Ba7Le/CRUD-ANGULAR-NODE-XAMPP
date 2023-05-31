@@ -14,13 +14,24 @@
         "email": "Email",
         "contact-number": "Contact Number"
     },
+    "login-page": {
+        "login": "Login",
+        "email": "Email",
+        "password": "Password"
+    },
+    "forgot-password-page": {
+        "forgot-password": "Forgot password",
+        "email": "Email"
+    },
     "required-or-invalid-field": {
         "mandatory": "This field is mandatory",
         "invalid": "This field is invalid"
     },
     "button": {
         "cancel": "Cancel",
-        "signup": "Sign Up"
+        "signup": "Sign Up",
+        "login": "Login",
+        "send-password": "Send Password"
     },
     "page-not-found": {
         "title": "Page Not Found",

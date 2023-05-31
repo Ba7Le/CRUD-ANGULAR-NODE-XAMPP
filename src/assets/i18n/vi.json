@@ -14,13 +14,24 @@
         "email": "E-mail",
         "contact-number": "Số liên lạc"
     },
+    "login-page": {
+        "login": "Đăng nhập",
+        "email": "E-mail",
+        "password": "Mật khẩu"
+    },
+    "forgot-password-page": {
+        "forgot-password": "Quên mật khẩu",
+        "email": "E-mail"
+    },
     "required-or-invalid-field": {
         "mandatory": "Trường này là bắt buộc phải điền",
         "invalid": "Kiểu dữ liệu không hợp lệ"
     },
     "button": {
         "cancel": "Hủy",
-        "signup": "Đăng ký"
+        "signup": "Đăng ký",
+        "login": "Đăng nhập",
+        "send-password": "Gửi mật khẩu"
     },
     "page-not-found": {
         "title": "Trang bạn yêu cầu không tồn tại",

@@ -14,13 +14,24 @@
         "email": "Eメール",
         "contact-number": "連絡先番号"
     },
+    "forgot-password-page": {
+        "forgot-password": "パスワードをお忘れですか",
+        "email": "Eメール"
+    },
+    "login-page": {
+        "login": "ログイン",
+        "email": "Eメール",
+        "password": "パスワード"
+    },
     "required-or-invalid-field": {
         "mandatory": "このフィールドは必須です。",
         "invalid": "このフィールドは無効です。"
     },
     "button": {
         "cancel": "キャンセル",
-        "signup": "サインアップ"
+        "signup": "サインアップ",
+        "login": "ログイン",
+        "send-password": "パスワードを送信する"
     },
     "page-not-found": {
         "title": "ページが見つかりません",
