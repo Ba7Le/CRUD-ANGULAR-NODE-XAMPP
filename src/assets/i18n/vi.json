@@ -31,7 +31,8 @@
         "cancel": "Hủy",
         "signup": "Đăng ký",
         "login": "Đăng nhập",
-        "send-password": "Gửi mật khẩu"
+        "send-password": "Gửi mật khẩu",
+        "logout": "đăng xuât"
     },
     "page-not-found": {
         "title": "Trang bạn yêu cầu không tồn tại",

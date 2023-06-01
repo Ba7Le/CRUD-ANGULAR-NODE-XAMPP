@@ -7,14 +7,24 @@
         <mat-menu #menu="matMenu">
             <button *ngFor="let item of langArray" mat-menu-item (click)="changeLang(item)">{{item}}</button>
         </mat-menu>
-        <span class="span-right" (click)="openLoginDialog('300ms', '1500ms')">{{'common.label.login' | translate
+        <span *ngIf="!checkTokenService.isToken()" class="span-right"
+            (click)="openLoginDialog('300ms', '1500ms')">{{'common.label.login' | translate
             }}</span>
-        <span class="span-right" (click)="openSingupDialog('300ms', '1500ms')">{{'common.label.signup' | translate
+        <span *ngIf="!checkTokenService.isToken()" class="span-right"
+            (click)="openSingupDialog('300ms', '1500ms')">{{'common.label.signup' | translate
             }}</span>
-        <span class=" span-right" (click)="openForgotPasswordDialog('300ms', '1500ms')">{{'common.label.forgot-password'
+        <span *ngIf="!checkTokenService.isToken()" class=" span-right"
+            (click)="openForgotPasswordDialog('300ms', '1500ms')">{{'common.label.forgot-password'
             | translate }}</span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <button *ngIf="checkTokenService.isToken()" mat-icon-button [matMenuTriggerFor]="menuProfile"
+            aria-label="Example icon-button with a menu">
             <mat-icon>account_circle</mat-icon>
         </button>
+        <mat-menu #menuProfile="matMenu">
+            <button mat-menu-item (click)="logoutFn()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>{{'button.logout' | translate}}</span>
+            </button>
+        </mat-menu>
     </mat-toolbar-row>
 </mat-toolbar>

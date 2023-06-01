@@ -31,7 +31,8 @@
         "cancel": "キャンセル",
         "signup": "サインアップ",
         "login": "ログイン",
-        "send-password": "パスワードを送信する"
+        "send-password": "パスワードを送信する",
+        "logout": "ログアウト"
     },
     "page-not-found": {
         "title": "ページが見つかりません",

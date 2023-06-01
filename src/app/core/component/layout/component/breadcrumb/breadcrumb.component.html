@@ -1,4 +1,4 @@
-<div class="d-flex flex-row" *ngIf="currentPage && currentPage.url !== '/home'">
+<div class="d-flex flex-row" *ngIf="currentPage && !router.url.includes('/home')">
     <div>
         <a class="breadcrumb-link" [routerLink]="'/'">
             <mat-icon>home</mat-icon>

@@ -5,6 +5,7 @@ import { LANGUAGES } from 'src/app/core/constants/common.constant';
 import { SignupComponent } from '../signup/signup.component';
 import { LoginComponent } from '../login/login.component';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
+import { CheckTokenService } from 'src/app/services/checkToken.service';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,8 @@ export class HeaderComponent {
 
   constructor(
     private translateService: TranslateService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public checkTokenService: CheckTokenService
   ) { }
 
   switchLanguage(lang: string) {
@@ -58,5 +60,9 @@ export class HeaderComponent {
     });
     dialogRef.afterClosed().subscribe(() => {
     });
+  }
+
+  logoutFn() {
+
   }
 }

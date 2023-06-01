@@ -31,7 +31,8 @@
         "cancel": "Cancel",
         "signup": "Sign Up",
         "login": "Login",
-        "send-password": "Send Password"
+        "send-password": "Send Password",
+        "logout": "Logout"
     },
     "page-not-found": {
         "title": "Page Not Found",

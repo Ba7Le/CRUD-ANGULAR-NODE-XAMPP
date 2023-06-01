@@ -119,7 +119,7 @@ router.patch('/update', auth.authenticateToken, checkRole.checkRole, (req, res) 
     })
 })
 
-router.get('/checkTocken', auth.authenticateToken, checkRole.checkRole, (req, res) => {
+router.get('/checkToken', auth.authenticateToken, (req, res) => {
     return res.status(200).json({ message: "true" });
 })
 

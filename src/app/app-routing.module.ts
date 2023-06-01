@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './core/component/layout/layout.component';
 import { PageNotFoundComponent } from './core/component/statis-page/page-not-found/page-not-found.component';
 import { BREADCRUMBS } from './core/constants/breadcrumb.constant';
+import { RouteGuardService } from './guards/route-guard.service';
 
 const routes: Routes = [
   {
@@ -18,12 +19,18 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
-        data: BREADCRUMBS.home
+        data: {
+          breadcrumb: BREADCRUMBS.home
+        }
       },
       {
         path: 'dashboard',
         loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
-        data: BREADCRUMBS.dashboard
+        canActivate: [RouteGuardService],
+        data: {
+          breadcrumb: BREADCRUMBS.dashboard,
+          expectedRole: ['admin', 'user']
+        }
       }
     ]
   },

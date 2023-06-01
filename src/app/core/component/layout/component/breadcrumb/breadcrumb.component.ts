@@ -17,7 +17,7 @@ export class BreadcrumbComponent implements OnInit, OnDestroy {
   breadcrumbs = BREADCRUMBS;
 
   constructor(
-    private router: Router,
+    public router: Router,
     private activatedRoute: ActivatedRoute
   ) { }
 
@@ -40,7 +40,7 @@ export class BreadcrumbComponent implements OnInit, OnDestroy {
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       if (this.activatedRoute.children.length > 0) {
-        this.currentPage = this.activatedRoute.children[0].snapshot.data as IBreadcrumb;
+        this.currentPage = this.activatedRoute.children[0].snapshot.data['breadcrumb'] as IBreadcrumb;
       }
     })
   }
