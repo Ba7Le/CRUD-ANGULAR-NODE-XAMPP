@@ -31,18 +31,21 @@ export class ForgotPasswordComponent {
   }
 
   handleSubmit() {
-    this.spinnerService.addLoading('forgot-password');
+    // this.spinnerService.addLoading('forgot-password');
+    this.ngxService.start();
     var formData = this.forgotPasswordForm.value;
     var data = {
       email: formData.email
     }
     this.userService.forgotPassword(data).subscribe((response: any) => {
-      this.spinnerService.clearLoading('forgot-password');
+      // this.spinnerService.clearLoading('forgot-password');
+      this.ngxService.stop();
       this.responseMessage = response?.message;
       this.dialogRef.close();
       this.snackBarService.openSnackBar(this.responseMessage, '');
     }, (error) => {
-      this.spinnerService.clearLoading('forgot-password');
+      // this.spinnerService.clearLoading('forgot-password');
+      this.ngxService.stop();
       if (error.error?.message) {
         this.responseMessage = error.error?.message;
       } else {

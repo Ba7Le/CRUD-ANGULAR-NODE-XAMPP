@@ -34,19 +34,22 @@ export class LoginComponent {
   }
 
   handleSubmit() {
-    this.spinnerService.addLoading('login');
+    // this.spinnerService.addLoading('login');
+    this.ngxService.start();
     var formData = this.loginForm.value;
     var data = {
       email: formData.email,
       password: formData.password
     }
     this.userService.login(data).subscribe((response: any) => {
-      this.spinnerService.clearLoading('login');
+      // this.spinnerService.clearLoading('login');
+      this.ngxService.stop();
       this.dialogRef.close();
       localStorage.setItem('token', response.token);
       this.router.navigate(['/dashboard'])
     }, (error) => {
-      this.spinnerService.clearLoading('login');
+      // this.spinnerService.clearLoading('login');
+      this.ngxService.stop();
       if (error.error?.message) {
         this.responseMessage = error.error?.message;
       } else {

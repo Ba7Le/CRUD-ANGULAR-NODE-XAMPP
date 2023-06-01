@@ -38,8 +38,8 @@ export class SignupComponent {
   }
 
   handleSubmit() {
-    // this.ngxService.start();
-    this.spinnerService.addLoading('signup');
+    this.ngxService.start();
+    // this.spinnerService.addLoading('signup');
     var formData = this.signupForm.value;
     var data = {
       name: formData.name,
@@ -48,15 +48,15 @@ export class SignupComponent {
       password: formData.password
     }
     this.userService.signup(data).subscribe((response: any) => {
-      // this.ngxService.stop();
-      this.spinnerService.clearLoading('signup');
+      this.ngxService.stop();
+      // this.spinnerService.clearLoading('signup');
       this.dialogRef.close();
       this.responseMessage = response?.message;
       this.snackbarService.openSnackBar(this.responseMessage, '');
       this.router.navigate(['/']);
     }, (error) => {
-      // this.ngxService.stop();
-      this.spinnerService.clearLoading('signup');
+      this.ngxService.stop();
+      // this.spinnerService.clearLoading('signup');
       if (error.error?.message) {
         this.responseMessage = error.error?.message;
       } else {
