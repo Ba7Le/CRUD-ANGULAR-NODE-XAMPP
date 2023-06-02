@@ -23,6 +23,12 @@
         "email": "Eメール",
         "password": "パスワード"
     },
+    "dashboard-page": {
+        "dashboard": "ダッシュボード",
+        "category": "カテゴリー",
+        "product": "製品",
+        "bill": "明細書"
+    },
     "required-or-invalid-field": {
         "mandatory": "このフィールドは必須です。",
         "invalid": "このフィールドは無効です。"
@@ -32,7 +38,8 @@
         "signup": "サインアップ",
         "login": "ログイン",
         "send-password": "パスワードを送信する",
-        "logout": "ログアウト"
+        "logout": "ログアウト",
+        "view-details": "詳細を見る"
     },
     "page-not-found": {
         "title": "ページが見つかりません",

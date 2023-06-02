@@ -23,6 +23,12 @@
         "forgot-password": "Forgot password",
         "email": "Email"
     },
+    "dashboard-page": {
+        "dashboard": "Dashboard",
+        "category": "Category",
+        "product": "Product",
+        "bill": "Bill"
+    },
     "required-or-invalid-field": {
         "mandatory": "This field is mandatory",
         "invalid": "This field is invalid"
@@ -32,7 +38,8 @@
         "signup": "Sign Up",
         "login": "Login",
         "send-password": "Send Password",
-        "logout": "Logout"
+        "logout": "Logout",
+        "view-details": "View Details"
     },
     "page-not-found": {
         "title": "Page Not Found",

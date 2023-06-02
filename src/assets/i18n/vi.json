@@ -23,6 +23,12 @@
         "forgot-password": "Quên mật khẩu",
         "email": "E-mail"
     },
+    "dashboard-page": {
+        "dashboard": "Bảng thống kê",
+        "category": "Loại",
+        "product": "Sản phẩm",
+        "bill": "Hóa đơn"
+    },
     "required-or-invalid-field": {
         "mandatory": "Trường này là bắt buộc phải điền",
         "invalid": "Kiểu dữ liệu không hợp lệ"
@@ -32,7 +38,8 @@
         "signup": "Đăng ký",
         "login": "Đăng nhập",
         "send-password": "Gửi mật khẩu",
-        "logout": "đăng xuât"
+        "logout": "đăng xuât",
+        "view-details": "Xem chi tiết"
     },
     "page-not-found": {
         "title": "Trang bạn yêu cầu không tồn tại",
