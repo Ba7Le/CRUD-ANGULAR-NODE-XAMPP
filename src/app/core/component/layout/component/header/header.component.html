@@ -21,7 +21,7 @@
             <mat-icon>account_circle</mat-icon>
         </button>
         <mat-menu #menuProfile="matMenu">
-            <button mat-menu-item (click)="logoutFn()">
+            <button mat-menu-item (click)="logoutFn('300ms', '1500ms')">
                 <mat-icon>exit_to_app</mat-icon>
                 <span>{{'button.logout' | translate}}</span>
             </button>

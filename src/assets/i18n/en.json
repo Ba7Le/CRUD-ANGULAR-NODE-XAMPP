@@ -39,7 +39,9 @@
         "login": "Login",
         "send-password": "Send Password",
         "logout": "Logout",
-        "view-details": "View Details"
+        "view-details": "View Details",
+        "no": "No",
+        "yes": "Yes"
     },
     "page-not-found": {
         "title": "Page Not Found",
@@ -53,5 +55,10 @@
     "breadcrumb": {
         "home": "Home",
         "dashboard": "Dashboard"
+    },
+    "dialog": {
+        "confirm": {
+            "title": "Are you sure to {{message}} ?"
+        }
     }
 }

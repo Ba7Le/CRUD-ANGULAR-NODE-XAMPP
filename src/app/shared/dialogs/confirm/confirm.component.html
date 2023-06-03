@@ -1,0 +1,6 @@
+<h1 class="title" mat-dialog-title>{{'dialog.confirm.title' | translate: {message: data.message} }}</h1>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button (click)="onNoClick()" color="warn">No</button>
+    <button mat-raised-button [mat-dialog-close]="data" color="primary">Yes</button>
+</div>

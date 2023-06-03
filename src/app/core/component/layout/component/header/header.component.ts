@@ -6,6 +6,7 @@ import { SignupComponent } from '../signup/signup.component';
 import { LoginComponent } from '../login/login.component';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 import { CheckTokenService } from 'src/app/services/checkToken.service';
+import { ConfirmComponent } from 'src/app/shared/dialogs/confirm/confirm.component';
 
 @Component({
   selector: 'app-header',
@@ -62,7 +63,17 @@ export class HeaderComponent {
     });
   }
 
-  logoutFn() {
-
+  logoutFn(enterAnimationDuration: string, exitAnimationDuration: string) {
+    const dialogRef = this.dialog.open(ConfirmComponent, {
+      width: '400px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: { message: 'delete' }
+    });
+    dialogRef.afterClosed().subscribe((message) => {
+      if (message) {
+        console.log('--message-->', message);
+      }
+    })
   }
 }

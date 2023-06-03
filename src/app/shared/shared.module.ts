@@ -3,23 +3,27 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TranslateModule } from '@ngx-translate/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ConfirmComponent } from './dialogs/confirm/confirm.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ConfirmComponent
+  ],
   imports: [
     CommonModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    TranslateModule,
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
