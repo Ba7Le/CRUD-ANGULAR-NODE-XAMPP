@@ -39,6 +39,7 @@
         "login": "ログイン",
         "send-password": "パスワードを送信する",
         "logout": "ログアウト",
+        "change-password": "パスワードを変更する",
         "view-details": "詳細を見る"
     },
     "page-not-found": {

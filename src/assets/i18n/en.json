@@ -39,9 +39,8 @@
         "login": "Login",
         "send-password": "Send Password",
         "logout": "Logout",
-        "view-details": "View Details",
-        "no": "No",
-        "yes": "Yes"
+        "change-password": "Change password",
+        "view-details": "View Details"
     },
     "page-not-found": {
         "title": "Page Not Found",

@@ -13,6 +13,7 @@ import { SpinnerComponent } from './component/layout/component/spinner/spinner.c
 import { SplashScreenComponent } from './component/layout/component/splash-screen/splash-screen.component';
 import { LoginComponent } from './component/layout/component/login/login.component';
 import { ForgotPasswordComponent } from './component/layout/component/forgot-password/forgot-password.component';
+import { ChangePasswordComponent } from './component/layout/component/change-password/change-password.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ForgotPasswordComponent } from './component/layout/component/forgot-pas
     SpinnerComponent,
     SplashScreenComponent,
     LoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ChangePasswordComponent
   ],
   imports: [
     CommonModule,

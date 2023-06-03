@@ -136,7 +136,7 @@ router.post('/changePassword', auth.authenticateToken, (req, res) => {
                 query = "update user set password = ? where email = ?";
                 connection.query(query, [user.newPassword, res.locals.email], (err, results) => {
                     if (!err) {
-                        return res.status(200).json({ message: "Password Updated Successfully" });
+                        return res.status(200).json({ message: "Password Updated Successfully! Please login again" });
                     }
                     else {
                         return res.status(500).json(err);

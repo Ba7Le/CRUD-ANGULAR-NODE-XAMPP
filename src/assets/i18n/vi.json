@@ -39,6 +39,7 @@
         "login": "Đăng nhập",
         "send-password": "Gửi mật khẩu",
         "logout": "đăng xuât",
+        "change-password": "Đổi mật khẩu",
         "view-details": "Xem chi tiết"
     },
     "page-not-found": {

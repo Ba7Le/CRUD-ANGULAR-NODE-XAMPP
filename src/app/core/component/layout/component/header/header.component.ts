@@ -7,6 +7,8 @@ import { LoginComponent } from '../login/login.component';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 import { CheckTokenService } from 'src/app/services/checkToken.service';
 import { ConfirmComponent } from 'src/app/shared/dialogs/confirm/confirm.component';
+import { Router } from '@angular/router';
+import { ChangePasswordComponent } from '../change-password/change-password.component';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +23,8 @@ export class HeaderComponent {
   constructor(
     private translateService: TranslateService,
     public dialog: MatDialog,
-    public checkTokenService: CheckTokenService
+    public checkTokenService: CheckTokenService,
+    private router: Router
   ) { }
 
   switchLanguage(lang: string) {
@@ -68,12 +71,25 @@ export class HeaderComponent {
       width: '400px',
       enterAnimationDuration,
       exitAnimationDuration,
-      data: { message: 'delete' }
+      data: { message: 'logout' }
     });
     dialogRef.afterClosed().subscribe((message) => {
       if (message) {
-        console.log('--message-->', message);
+        this.router.navigate(['/']);
+        localStorage.removeItem('token');
       }
     })
   }
+
+  changePasswordFn(enterAnimationDuration: string, exitAnimationDuration: string) {
+    const dialogRef = this.dialog.open(ChangePasswordComponent, {
+      width: '500px',
+      enterAnimationDuration,
+      exitAnimationDuration
+    })
+    dialogRef.afterClosed().subscribe((res) => {
+
+    })
+  }
+
 }

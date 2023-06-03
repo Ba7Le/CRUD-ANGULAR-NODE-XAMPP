@@ -25,6 +25,10 @@
                 <mat-icon>exit_to_app</mat-icon>
                 <span>{{'button.logout' | translate}}</span>
             </button>
+            <button mat-menu-item (click)="changePasswordFn('300ms', '1500ms')">
+                <mat-icon>vpn_key</mat-icon>
+                <span>{{'button.change-password' | translate}}</span>
+            </button>
         </mat-menu>
     </mat-toolbar-row>
 </mat-toolbar>
