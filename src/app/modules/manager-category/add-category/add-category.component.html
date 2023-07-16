@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="addCategoryForm">
+        <mat-form-field appearance="outline" class="w-100 mt-3">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+            <mat-error>
+                <span *ngIf="addCategoryForm.controls.name.errors?.required">
+                    {{'required-or-invalid-field.mandatory' | translate}}
+                </span>
+            </mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions class="mat-dialog-actions">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <ng-template [ngIf]="data.title === 'Add Category'">
+        <button mat-button color="primary" (click)="handleAddCategory()"
+            [disabled]="!addCategoryForm.valid">Add</button>
+    </ng-template>
+    <ng-template [ngIf]="data.title === 'Update Category'">
+        <button mat-button color="primary" (click)="handleUpdateCategory()"
+            [disabled]="!addCategoryForm.valid">Update</button>
+    </ng-template>
+</div>

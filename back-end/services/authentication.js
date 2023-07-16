@@ -6,12 +6,10 @@ function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
     console.log('authHeader: ====', authHeader);
     const token = authHeader && authHeader.split(' ')[1];
-    if (!token)
-        return res.sendStatus(401);
+    if (!token) return res.sendStatus(401);
 
     jwt.verify(token, process.env.ACCESS_TOKEN, (err, response) => {
-        if (err)
-            res.sendStatus(403);
+        if (err) return res.sendStatus(403);
         res.locals = response;
         next();
     })

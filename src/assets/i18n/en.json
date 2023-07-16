@@ -49,11 +49,13 @@
     },
     "sidenav": {
         "home": "Home",
-        "dashboard": "Dashboard"
+        "dashboard": "Dashboard",
+        "manager-category": "Manager Category"
     },
     "breadcrumb": {
         "home": "Home",
-        "dashboard": "Dashboard"
+        "dashboard": "Dashboard",
+        "manager-category": "Manager Category"
     },
     "dialog": {
         "confirm": {

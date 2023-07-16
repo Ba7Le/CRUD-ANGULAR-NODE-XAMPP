@@ -31,6 +31,15 @@ const routes: Routes = [
           breadcrumb: BREADCRUMBS.dashboard,
           expectedRole: ['admin', 'user']
         }
+      },
+      {
+        path: 'manager-category',
+        loadChildren: () => import('./modules/manager-category/manager-category.module').then(m => m.ManagerCategoryModule),
+        canActivate: [RouteGuardService],
+        data: {
+          breadcrumb: BREADCRUMBS.managerCategory,
+          expectedRole: ['admin']
+        }
       }
     ]
   },

@@ -1,6 +1,6 @@
 const express = require('express');
 const connection = require('../connection');
-const { json } = require('body-parser');
+// const { json } = require('body-parser');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
@@ -83,7 +83,7 @@ router.post('/forgotPassword', (req, res) => {
                         console.log('Email sent: ' + info.response);
                     }
                 });
-                return res.status(200).json({ message: "password sent successfully to your email2." });
+                return res.status(200).json({ message: "password sent successfully to your email." });
             }
         }
         else {

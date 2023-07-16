@@ -1,0 +1,40 @@
+<button mat-raised-button color="primary" (click)="openDialogAdd('300ms', '1500ms', 'add')">Add Category</button>
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" #input>
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="id">
+            <th class="col-width-40" mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td class="col-width-40" mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th class="col-width-40" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td class="col-width-40" mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th class="col-width-20" mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+            <td class="col-width-20" mat-cell *matCellDef="let row; let i = index">
+                <button mat-mini-fab color="primary"
+                    (click)="openDialogAdd('300ms', '1500ms', 'update', row.name, row.id)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-mini-fab color="warn" class="mg-left"
+                    (click)="confirmDeleteCategory('300ms', '1500ms', row.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5]" aria-label="Select page of users"></mat-paginator>
+</div>

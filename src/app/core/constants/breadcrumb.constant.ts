@@ -6,5 +6,9 @@ export const BREADCRUMBS = {
     dashboard: {
         title: 'breadcrumb.dashboard',
         url: '/dashboard'
+    },
+    managerCategory: {
+        title: 'breadcrumb.manager-category',
+        url: '/manager-category'
     }
 }

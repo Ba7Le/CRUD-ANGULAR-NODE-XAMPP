@@ -42,7 +42,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-    MatSnackBarModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en', // Set the default language
       loader: {

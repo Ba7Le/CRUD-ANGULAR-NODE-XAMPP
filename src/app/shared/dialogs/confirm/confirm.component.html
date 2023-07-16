@@ -2,5 +2,5 @@
 
 <div mat-dialog-actions class="action">
     <button mat-raised-button (click)="onNoClick()" color="warn">No</button>
-    <button mat-raised-button [mat-dialog-close]="data" color="primary">Yes</button>
+    <button mat-raised-button (click)="handleConfirm()" color="primary">Yes</button>
 </div>

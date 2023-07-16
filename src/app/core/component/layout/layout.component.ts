@@ -13,18 +13,16 @@ export class LayoutComponent implements OnInit, OnDestroy {
   spinner$: Observable<boolean>
   loadingSplashScreen = true;
 
-  constructor(private _spinnerService: SpinnerService, private cdr: ChangeDetectorRef) {
+  constructor(private _spinnerService: SpinnerService) {
 
   }
 
   ngOnInit(): void {
-    this.getSpinner();
     of(true).pipe(
       takeUntil(this._unsubscribe$),
       delay(3000)
     ).subscribe(() => {
-      this.loadingSplashScreen = false
-      this.cdr.detectChanges();
+      this.loadingSplashScreen = false;
     });
   }
 

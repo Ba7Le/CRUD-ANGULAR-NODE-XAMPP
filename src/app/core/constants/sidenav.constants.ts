@@ -8,5 +8,10 @@ export const SIDE_NAV_ITEMS = [
         label: 'sidenav.dashboard',
         icon: 'dashboard',
         router: '/dashboard'
+    },
+    {
+        label: 'sidenav.manager-category',
+        icon: 'category',
+        router: '/manager-category'
     }
 ]
