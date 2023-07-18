@@ -40,7 +40,16 @@ const routes: Routes = [
           breadcrumb: BREADCRUMBS.managerCategory,
           expectedRole: ['admin']
         }
-      }
+      },
+      {
+        path: 'manager-product',
+        loadChildren: () => import('./modules/manager-product/manager-product.module').then(m => m.ManagerProductModule),
+        canActivate: [RouteGuardService],
+        data: {
+          breadcrumb: BREADCRUMBS.managerProduct,
+          expectedRole: ['admin']
+        }
+      },
     ]
   },
   {

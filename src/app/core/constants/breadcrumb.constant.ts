@@ -10,5 +10,9 @@ export const BREADCRUMBS = {
     managerCategory: {
         title: 'breadcrumb.manager-category',
         url: '/manager-category'
+    },
+    managerProduct: {
+        title: 'breadcrumb.manager-product',
+        url: '/manager-product'
     }
 }

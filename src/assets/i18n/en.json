@@ -50,12 +50,14 @@
     "sidenav": {
         "home": "Home",
         "dashboard": "Dashboard",
-        "manager-category": "Manager Category"
+        "manager-category": "Manager Category",
+        "manager-product": "Manager Product"
     },
     "breadcrumb": {
         "home": "Home",
         "dashboard": "Dashboard",
-        "manager-category": "Manager Category"
+        "manager-category": "Manager Category",
+        "manager-product": "Manager Product"
     },
     "dialog": {
         "confirm": {

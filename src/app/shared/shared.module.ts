@@ -17,6 +17,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { MatTableModule } from '@angular/material/table';
     MatSnackBarModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatSlideToggleModule,
+    MatSelectModule
   ],
   exports: [
     CommonModule,
@@ -58,7 +62,9 @@ import { MatTableModule } from '@angular/material/table';
     MatSnackBarModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatSlideToggleModule,
+    MatSelectModule
   ]
 })
 export class SharedModule { }
