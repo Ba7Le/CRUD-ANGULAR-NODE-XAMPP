@@ -1,0 +1,58 @@
+{
+    "common": {
+        "label": {
+            "cat-management-system": "猫管理システム",
+            "login": "ログイン",
+            "signup": "サインアップ",
+            "forgot-password": "パスワードをお忘れですか"
+        }
+    },
+    "signup-page": {
+        "signup": "サインアップ",
+        "name": "名前",
+        "password": "パスワード",
+        "email": "Eメール",
+        "contact-number": "連絡先番号"
+    },
+    "forgot-password-page": {
+        "forgot-password": "パスワードをお忘れですか",
+        "email": "Eメール"
+    },
+    "login-page": {
+        "login": "ログイン",
+        "email": "Eメール",
+        "password": "パスワード"
+    },
+    "dashboard-page": {
+        "dashboard": "ダッシュボード",
+        "category": "カテゴリー",
+        "product": "製品",
+        "bill": "明細書"
+    },
+    "required-or-invalid-field": {
+        "mandatory": "このフィールドは必須です。",
+        "invalid": "このフィールドは無効です。"
+    },
+    "button": {
+        "cancel": "キャンセル",
+        "signup": "サインアップ",
+        "login": "ログイン",
+        "send-password": "パスワードを送信する",
+        "logout": "ログアウト",
+        "change-password": "パスワードを変更する",
+        "view-details": "詳細を見る"
+    },
+    "page-not-found": {
+        "title": "ページが見つかりません",
+        "message": "リクエストされたページは見つかりませんでした。",
+        "back-home": "家に帰る"
+    },
+    "sidenav": {
+        "home": "家",
+        "dashboard": "ダッシュボード"
+    },
+    "breadcrumb": {
+        "home": "家",
+        "dashboard": "ダッシュボード"
+    }
+}

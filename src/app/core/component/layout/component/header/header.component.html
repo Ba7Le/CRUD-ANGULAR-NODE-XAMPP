@@ -1,7 +1,8 @@
 <mat-toolbar color="primary" class="dark-toolbar">
     <mat-toolbar-row>
-        <span [routerLink]="['home']" class="cursor-pointer">{{'common.label.cat-management-system' | translate
-            }}</span>
+        <span [routerLink]="['home']" class="cursor-pointer">
+            {{'common.label.cat-management-system' | translate}}
+        </span>
         <span class="example-spacer"></span>
         <button mat-button [matMenuTriggerFor]="menu">{{currentLanguage}}</button>
         <mat-menu #menu="matMenu">

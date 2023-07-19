@@ -1,0 +1,67 @@
+{
+    "common": {
+        "label": {
+            "cat-management-system": "Cat Management System",
+            "login": "Login",
+            "signup": "Sign Up",
+            "forgot-password": "Forgot password"
+        }
+    },
+    "signup-page": {
+        "signup": "Sign Up",
+        "name": "Name",
+        "password": "Password",
+        "email": "Email",
+        "contact-number": "Contact Number"
+    },
+    "login-page": {
+        "login": "Login",
+        "email": "Email",
+        "password": "Password"
+    },
+    "forgot-password-page": {
+        "forgot-password": "Forgot password",
+        "email": "Email"
+    },
+    "dashboard-page": {
+        "dashboard": "Dashboard",
+        "category": "Category",
+        "product": "Product",
+        "bill": "Bill"
+    },
+    "required-or-invalid-field": {
+        "mandatory": "This field is mandatory",
+        "invalid": "This field is invalid"
+    },
+    "button": {
+        "cancel": "Cancel",
+        "signup": "Sign Up",
+        "login": "Login",
+        "send-password": "Send Password",
+        "logout": "Logout",
+        "change-password": "Change password",
+        "view-details": "View Details"
+    },
+    "page-not-found": {
+        "title": "Page Not Found",
+        "message": "The requested page could not be found.",
+        "back-home": "Back to home"
+    },
+    "sidenav": {
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "manager-category": "Manager Category",
+        "manager-product": "Manager Product"
+    },
+    "breadcrumb": {
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "manager-category": "Manager Category",
+        "manager-product": "Manager Product"
+    },
+    "dialog": {
+        "confirm": {
+            "title": "Are you sure to {{message}} ?"
+        }
+    }
+}

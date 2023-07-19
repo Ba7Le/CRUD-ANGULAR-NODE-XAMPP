@@ -28,7 +28,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
 // Function to load translations from a JSON file
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
