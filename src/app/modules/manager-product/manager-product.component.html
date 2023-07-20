@@ -41,10 +41,12 @@
                     <button mat-mini-fab color="primary" (click)="openDialogAdd('300ms', '1500ms', 'update', row)">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-mini-fab color="warn" class="mg-left">
+                    <button mat-mini-fab color="warn" class="mg-left"
+                        (click)="confirmDeleteProduct('300ms', '1500ms', row.id)">
                         <mat-icon>delete</mat-icon>
                     </button>
-                    <mat-slide-toggle class="mg-left"></mat-slide-toggle>
+                    <mat-slide-toggle [checked]="row.status === 'active'? true: false"
+                        (change)="changeStatus($event, row.id, '300ms', '1500ms')" class="mg-left"></mat-slide-toggle>
                 </div>
             </td>
         </ng-container>

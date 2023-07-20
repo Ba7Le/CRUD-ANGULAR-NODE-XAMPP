@@ -41,7 +41,7 @@ router.get('/get', auth.authenticateToken, (req, res, next) => {
 
 router.post('/add', auth.authenticateToken, checkRole.checkRole, (req, res) => {
     let product = req.body;
-    var query = "insert into product (name, categoryId, description, price, status) values (?,?,?,?,'true')";
+    var query = "insert into product (name, categoryId, description, price, status) values (?,?,?,?,'active')";
     connection.query(query, [product.name, product.categoryId, product.description, product.price], (err, results) => {
         if (!err) {
             return res.status(200).json({ message: "Product added successfully" });

@@ -33,6 +33,7 @@ export class AddProductComponent {
 
   ngOnInit() {
     this.addProductForm = this.fb.group({
+      id: [this.data.id ? this.data.id : null],
       name: [this.data.name ? this.data.name : null, [Validators.required]],
       category: [this.data.category ? this.data.category : null, [Validators.required]],
       price: [this.data.price ? this.data.price : null, [Validators.required]],
@@ -70,10 +71,7 @@ export class AddProductComponent {
   }
 
   handleUpdateProduct() {
-    let payload = {
-      name: this.addProductForm.get('name').value,
-      id: this.data['id']
-    }
+    let payload = new ProductM(this.addProductForm.getRawValue())
     this.ngxService.start();
     this.productService.update(payload).subscribe(
       (res: any) => {

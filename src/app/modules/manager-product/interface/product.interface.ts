@@ -9,6 +9,7 @@ export interface ProductI {
 }
 
 export interface ProductPayloadI {
+    id: number;
     name: string;
     category: number;
     price: number;

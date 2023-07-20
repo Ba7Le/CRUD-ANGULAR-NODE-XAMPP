@@ -9,6 +9,7 @@ import { SnackbarService } from 'src/app/services/snackbar.service';
 import { ProductService } from 'src/app/services/product.service';
 import { GlobalConstants } from 'src/app/shared/global-constants';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ConfirmComponent } from 'src/app/shared/dialogs/confirm/confirm.component';
 
 @Component({
   selector: 'app-manager-product',
@@ -57,6 +58,39 @@ export class ManagerProductComponent {
     }
   }
 
+  changeStatus(event: any, id: number, enterAnimationDuration: string, exitAnimationDuration: string) {
+    const dialogRef = this.dialog.open(ConfirmComponent, {
+      width: '400px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: {
+        message: 'change status'
+      }
+    })
+    dialogRef.afterClosed().subscribe((isConfirm) => {
+      if (isConfirm) {
+        const data = {
+          id: id,
+          status: event.checked ? 'active' : 'unActive'
+        }
+        this.productService.updateStatus(data).subscribe(
+          async (res: any) => {
+            const isReturn: boolean = await this.getAllProducts();
+            if (isReturn) {
+              this.snackbarService.openSnackBar(res.message, '');
+            }
+          },
+          (error: any) => {
+            this.ngxService.stop();
+            this.snackbarService.openSnackBar(GlobalConstants.genericError, GlobalConstants.error);
+          }
+        );
+      } else {
+        this.getAllProducts();
+      }
+    })
+  }
+
   openDialogAdd(enterAnimationDuration: string, exitAnimationDuration: string, type?: string, row?: ProductI) {
     const title = type === 'add' ? 'Add Product' : 'Update Product';
     const dialogRef = this.dialog.open(AddProductComponent, {
@@ -65,6 +99,7 @@ export class ManagerProductComponent {
       exitAnimationDuration,
       data: {
         title: title,
+        id: row?.id,
         name: row?.name,
         category: row?.categoryId,
         price: row?.price,
@@ -82,6 +117,34 @@ export class ManagerProductComponent {
         } catch (error) {
           this.snackbarService.openSnackBar('Error occurred while fetching categories', GlobalConstants.error);
         }
+      }
+    })
+  }
+
+  confirmDeleteProduct(enterAnimationDuration: string, exitAnimationDuration: string, id: number) {
+    const dialogRef = this.dialog.open(ConfirmComponent, {
+      width: '400px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: {
+        message: 'delete'
+      }
+    })
+
+    dialogRef.afterClosed().subscribe((isConfirm) => {
+      if (isConfirm) {
+        this.productService.delete(id).subscribe(
+          async (res: any) => {
+            const isReturn: boolean = await this.getAllProducts();
+            if (isReturn) {
+              this.snackbarService.openSnackBar(res.message, '');
+            }
+          },
+          (error: any) => {
+            this.ngxService.stop();
+            this.snackbarService.openSnackBar(GlobalConstants.genericError, GlobalConstants.error);
+          }
+        );
       }
     })
   }

@@ -8,7 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ConfirmComponent } from './dialogs/confirm/confirm.component';
@@ -43,7 +43,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSortModule,
     MatTableModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ],
   exports: [
     CommonModule,
@@ -64,7 +65,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSortModule,
     MatTableModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ]
 })
 export class SharedModule { }
