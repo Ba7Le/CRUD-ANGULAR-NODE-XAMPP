@@ -4,12 +4,34 @@ const router = express.Router();
 var auth = require('../services/authentication');
 var checkRole = require('../services/checkRole');
 
-router.post('/add', auth.authenticateToken, checkRole.checkRole, (req, res) => {
-    let product = req.body;
-    var query = "insert into product (name, categoryId, description, price, status) values (?,?,?,?,'true')";
-    connection.query(query, [product.name, product.categoryId, product.description, product.price], (err, results) => {
+// const { redisClient } = require('./redis');
+// router.get('/get', auth.authenticateToken, (req, res, next) => {
+//     const cacheKey = 'products_data';
+//     redisClient.get(cacheKey, (err, cachedData) => {
+//         if (!err && cachedData) {
+//             const parsedData = JSON.parse(cachedData);
+//             return res.status(200).json(parsedData);
+//         } else {
+//             var query = "SELECT p.id, p.name, p.description, p.price, p.status, c.id as categoryId, c.name as categoryName FROM product AS p INNER JOIN category AS c WHERE p.categoryId = c.id";
+//             connection.query(query, (err, results) => {
+//                 if (!err) {
+//                     const dataToCache = JSON.stringify(results);
+//                     redisClient.setex(cacheKey, 3600, dataToCache); // 3600 là thời gian sống của cache (1 giờ)
+//                     return res.status(200).json(results);
+//                 } else {
+//                     return res.status(500).json(err);
+//                 }
+//             });
+//         }
+//     });
+// });
+
+
+router.get('/get', auth.authenticateToken, (req, res, next) => {
+    var query = "select p.id, p.name, p.description, p.price, p.status, c.id as categoryId, c.name as categoryName from product as p INNER JOIN category as c where p.categoryId = c.id";
+    connection.query(query, (err, results) => {
         if (!err) {
-            return res.status(200).json({ message: "Product added successfully" });
+            return res.status(200).json(results);
         }
         else {
             return res.status(500).json(err);
@@ -17,11 +39,12 @@ router.post('/add', auth.authenticateToken, checkRole.checkRole, (req, res) => {
     })
 })
 
-router.get('/get', auth.authenticateToken, (req, res, next) => {
-    var query = "select p.id, p.name, p.description, p.price, p.status, c.id as categoryId, c.name as categoryName from product as p INNER JOIN category as c where p.categoryId = c.id";
-    connection.query(query, (err, results) => {
+router.post('/add', auth.authenticateToken, checkRole.checkRole, (req, res) => {
+    let product = req.body;
+    var query = "insert into product (name, categoryId, description, price, status) values (?,?,?,?,'true')";
+    connection.query(query, [product.name, product.categoryId, product.description, product.price], (err, results) => {
         if (!err) {
-            return res.status(200).json(results);
+            return res.status(200).json({ message: "Product added successfully" });
         }
         else {
             return res.status(500).json(err);

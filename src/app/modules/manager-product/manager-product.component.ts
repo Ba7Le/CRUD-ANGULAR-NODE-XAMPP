@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { ProductI } from './interface/product.interface';
+import { ProductI, ProductPayloadI } from './interface/product.interface';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
@@ -16,7 +16,7 @@ import { AddProductComponent } from './add-product/add-product.component';
   styleUrls: ['./manager-product.component.scss']
 })
 export class ManagerProductComponent {
-  displayedColumns: string[] = ['name', 'category', 'description', 'price', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'category', 'description', 'price', 'action'];
   dataSource: MatTableDataSource<ProductI>;
   responseMessage: string;
 
@@ -57,7 +57,7 @@ export class ManagerProductComponent {
     }
   }
 
-  openDialogAdd(enterAnimationDuration: string, exitAnimationDuration: string, type?: string, name?: string, id?: string) {
+  openDialogAdd(enterAnimationDuration: string, exitAnimationDuration: string, type?: string, row?: ProductI) {
     const title = type === 'add' ? 'Add Product' : 'Update Product';
     const dialogRef = this.dialog.open(AddProductComponent, {
       width: '550px',
@@ -65,8 +65,10 @@ export class ManagerProductComponent {
       exitAnimationDuration,
       data: {
         title: title,
-        name: name,
-        id: id
+        name: row?.name,
+        category: row?.categoryId,
+        price: row?.price,
+        description: row?.description
       }
     });
 

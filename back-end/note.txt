@@ -1,0 +1,6 @@
+// redisClient.set('name2', 'hung2', redis.print)
+// redisClient.get('products_data', redis.print)
+// redisClient.keys('*', redis.print);
+// const keyToDelete = 'products_data';
+// deleteKeys([keyToDelete]);
+// viewAllData();
