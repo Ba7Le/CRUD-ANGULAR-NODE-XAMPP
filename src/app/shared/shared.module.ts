@@ -19,6 +19,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatTableModule,
     MatSlideToggleModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   exports: [
     CommonModule,
@@ -66,7 +68,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatTableModule,
     MatSlideToggleModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ]
 })
 export class SharedModule { }

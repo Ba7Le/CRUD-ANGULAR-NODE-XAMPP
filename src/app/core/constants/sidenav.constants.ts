@@ -16,7 +16,12 @@ export const SIDE_NAV_ITEMS = [
     },
     {
         label: 'sidenav.manager-product',
-        icon: 'shopping_bag',
+        icon: 'inventory',
         router: '/manager-product'
+    },
+    {
+        label: 'sidenav.manager-order',
+        icon: 'shopping_cart',
+        router: '/manager-order'
     }
 ]

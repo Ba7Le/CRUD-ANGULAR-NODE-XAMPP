@@ -1,0 +1,26 @@
+.black-color {
+    color: black;
+}
+
+.order-container {
+    height: 82%;
+    overflow: auto;
+    padding: 0 10px;
+}
+
+/* Styles for the custom scrollbar */
+.order-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.order-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.order-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+.order-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}

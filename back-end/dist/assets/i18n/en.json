@@ -51,13 +51,15 @@
         "home": "Home",
         "dashboard": "Dashboard",
         "manager-category": "Manager Category",
-        "manager-product": "Manager Product"
+        "manager-product": "Manager Product",
+        "manager-order": "Manager Order"
     },
     "breadcrumb": {
         "home": "Home",
         "dashboard": "Dashboard",
         "manager-category": "Manager Category",
-        "manager-product": "Manager Product"
+        "manager-product": "Manager Product",
+        "manager-order": "Manager Order"
     },
     "dialog": {
         "confirm": {

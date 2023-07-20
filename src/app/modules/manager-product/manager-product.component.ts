@@ -17,7 +17,7 @@ import { ConfirmComponent } from 'src/app/shared/dialogs/confirm/confirm.compone
   styleUrls: ['./manager-product.component.scss']
 })
 export class ManagerProductComponent {
-  displayedColumns: string[] = ['id', 'name', 'category', 'description', 'price', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'category', 'description', 'price', 'status', 'action'];
   dataSource: MatTableDataSource<ProductI>;
   responseMessage: string;
 

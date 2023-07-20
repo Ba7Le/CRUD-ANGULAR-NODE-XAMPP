@@ -30,4 +30,13 @@ export class ProductService {
   delete(id: number) {
     return this.http.delete(this.url + `/product/delete/${id}`);
   }
+
+  getProductsByCategory(id: number) {
+    return this.http.get(this.url + `/product/getByCategory/${id}`);
+  }
+
+  getById(id: number) {
+    return this.http.get(this.url + `/product/getById/${id}`);
+  }
+
 }

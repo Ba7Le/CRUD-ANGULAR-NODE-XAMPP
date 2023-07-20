@@ -50,6 +50,15 @@ const routes: Routes = [
           expectedRole: ['admin']
         }
       },
+      {
+        path: 'manager-order',
+        loadChildren: () => import('./modules/manager-order/manager-order.module').then(m => m.ManagerOrderModule),
+        canActivate: [RouteGuardService],
+        data: {
+          breadcrumb: BREADCRUMBS.managerOrder,
+          expectedRole: ['admin']
+        }
+      },
     ]
   },
   {
