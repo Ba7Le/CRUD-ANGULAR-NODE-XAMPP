@@ -4,6 +4,8 @@ export class GlobalConstants {
     public static unauthorized: string = "You are not authorized person to access this page"
     public static pleaseLogin: string = "Please login your account"
     public static tokenInvalid: string = "Your token invalid"
+    public static productExistError: string = "Product already exist";
+    public static productAdd: string = "Product added successfully";
 
     //Regex
     public static nameRegex: string = "[a-zA-Z0-9 ]*";

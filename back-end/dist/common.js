@@ -47,6 +47,61 @@ CategoryService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__
 
 /***/ }),
 
+/***/ 6082:
+/*!*********************************************!*\
+  !*** ./src/app/services/product.service.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ProductService": () => (/* binding */ ProductService)
+/* harmony export */ });
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment */ 2340);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 3765);
+
+
+
+class ProductService {
+  constructor(http) {
+    this.http = http;
+    this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl;
+  }
+  add(data) {
+    return this.http.post(this.url + `/product/add`, data);
+  }
+  update(data) {
+    return this.http.patch(this.url + `/product/update`, data);
+  }
+  getAllProducts() {
+    return this.http.get(this.url + `/product/get`);
+  }
+  updateStatus(data) {
+    return this.http.patch(this.url + `/product/updateStatus`, data);
+  }
+  delete(id) {
+    return this.http.delete(this.url + `/product/delete/${id}`);
+  }
+  getProductsByCategory(id) {
+    return this.http.get(this.url + `/product/getByCategory/${id}`);
+  }
+  getById(id) {
+    return this.http.get(this.url + `/product/getById/${id}`);
+  }
+}
+ProductService.ɵfac = function ProductService_Factory(t) {
+  return new (t || ProductService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient));
+};
+ProductService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+  token: ProductService,
+  factory: ProductService.ɵfac,
+  providedIn: 'root'
+});
+
+
+/***/ }),
+
 /***/ 1670:
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!

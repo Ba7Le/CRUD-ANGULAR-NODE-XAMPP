@@ -102,7 +102,7 @@ router.patch('/updateStatus', auth.authenticateToken, checkRole.checkRole, (req,
 
 router.get('/getByCategory/:id', auth.authenticateToken, (req, res, next) => {
     const id = req.params.id;
-    var query = "select id, name from product where categoryId = ? and status = 'true'";
+    var query = "select id, name from product where categoryId = ? and status = 'active'";
     connection.query(query, [id], (err, results) => {
         if (!err) {
             return res.status(200).json(results);

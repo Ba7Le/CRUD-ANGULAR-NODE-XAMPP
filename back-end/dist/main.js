@@ -63,7 +63,7 @@ const routes = [{
     }
   }, {
     path: 'manager-order',
-    loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_modules_manager-order_manager-order_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./modules/manager-order/manager-order.module */ 6539)).then(m => m.ManagerOrderModule),
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_modules_manager-order_manager-order_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/manager-order/manager-order.module */ 6539)).then(m => m.ManagerOrderModule),
     canActivate: [_guards_route_guard_service__WEBPACK_IMPORTED_MODULE_3__.RouteGuardService],
     data: {
       breadcrumb: _core_constants_breadcrumb_constant__WEBPACK_IMPORTED_MODULE_2__.BREADCRUMBS.managerOrder,
@@ -2473,6 +2473,8 @@ GlobalConstants.genericError = "Something went wrong. Please try again later";
 GlobalConstants.unauthorized = "You are not authorized person to access this page";
 GlobalConstants.pleaseLogin = "Please login your account";
 GlobalConstants.tokenInvalid = "Your token invalid";
+GlobalConstants.productExistError = "Product already exist";
+GlobalConstants.productAdd = "Product added successfully";
 //Regex
 GlobalConstants.nameRegex = "[a-zA-Z0-9 ]*";
 GlobalConstants.emailRegex = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}";
