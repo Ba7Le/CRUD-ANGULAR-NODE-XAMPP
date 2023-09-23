@@ -18,5 +18,9 @@ export const BREADCRUMBS = {
     managerOrder: {
         title: 'breadcrumb.manager-order',
         url: '/manager-order'
+    },
+    viewBill: {
+        title: 'breadcrumb.view-bill',
+        url: '/view-bill'
     }
 }

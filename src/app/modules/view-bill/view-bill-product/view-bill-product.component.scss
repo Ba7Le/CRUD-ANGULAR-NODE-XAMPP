@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tableUp {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableUp td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}

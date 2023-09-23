@@ -59,6 +59,15 @@ const routes: Routes = [
           expectedRole: ['admin']
         }
       },
+      {
+        path: 'view-bill',
+        loadChildren: () => import('./modules/view-bill/view-bill.module').then(m => m.ViewBillModule),
+        canActivate: [RouteGuardService],
+        data: {
+          breadcrumb: BREADCRUMBS.viewBill,
+          expectedRole: ['admin']
+        }
+      },
     ]
   },
   {

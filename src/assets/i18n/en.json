@@ -52,14 +52,16 @@
         "dashboard": "Dashboard",
         "manager-category": "Manager Category",
         "manager-product": "Manager Product",
-        "manager-order": "Manager Order"
+        "manager-order": "Manager Order",
+        "view-bill": "View Bill"
     },
     "breadcrumb": {
         "home": "Home",
         "dashboard": "Dashboard",
         "manager-category": "Manager Category",
         "manager-product": "Manager Product",
-        "manager-order": "Manager Order"
+        "manager-order": "Manager Order",
+        "view-bill": "View Bill"
     },
     "dialog": {
         "confirm": {

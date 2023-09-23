@@ -20,4 +20,12 @@ export class BillService {
     return this.http.post(this.url + `/bill/getPdf`, data, { responseType: 'blob' });
   }
 
+  getBills() {
+    return this.http.get(this.url + "/bill/getBills");
+  }
+
+  delete(id: any) {
+    return this.http.delete(this.url + "/bill/delete/" + id);
+  }
+
 }

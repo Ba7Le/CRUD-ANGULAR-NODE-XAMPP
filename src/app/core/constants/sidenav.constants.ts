@@ -23,5 +23,10 @@ export const SIDE_NAV_ITEMS = [
         label: 'sidenav.manager-order',
         icon: 'shopping_cart',
         router: '/manager-order'
+    },
+    {
+        label: 'sidenav.view-bill',
+        icon: 'import_contacts',
+        router: '/view-bill'
     }
 ]

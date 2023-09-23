@@ -69,6 +69,14 @@ const routes = [{
       breadcrumb: _core_constants_breadcrumb_constant__WEBPACK_IMPORTED_MODULE_2__.BREADCRUMBS.managerOrder,
       expectedRole: ['admin']
     }
+  }, {
+    path: 'view-bill',
+    loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_modules_view-bill_view-bill_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./modules/view-bill/view-bill.module */ 3501)).then(m => m.ViewBillModule),
+    canActivate: [_guards_route_guard_service__WEBPACK_IMPORTED_MODULE_3__.RouteGuardService],
+    data: {
+      breadcrumb: _core_constants_breadcrumb_constant__WEBPACK_IMPORTED_MODULE_2__.BREADCRUMBS.viewBill,
+      expectedRole: ['admin']
+    }
   }]
 }, {
   path: '**',
@@ -1911,6 +1919,10 @@ const BREADCRUMBS = {
   managerOrder: {
     title: 'breadcrumb.manager-order',
     url: '/manager-order'
+  },
+  viewBill: {
+    title: 'breadcrumb.view-bill',
+    url: '/view-bill'
   }
 };
 
@@ -1960,6 +1972,10 @@ const SIDE_NAV_ITEMS = [{
   label: 'sidenav.manager-order',
   icon: 'shopping_cart',
   router: '/manager-order'
+}, {
+  label: 'sidenav.view-bill',
+  icon: 'import_contacts',
+  router: '/view-bill'
 }];
 
 /***/ }),
